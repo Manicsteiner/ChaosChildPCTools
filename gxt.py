@@ -86,7 +86,14 @@ class GxtDecoder(ImageFile.PyDecoder):
             buf = buf[self.texture.offset:self.texture.size + self.texture.offset]
             buf = aligned(buf,self.texture.width)
             self.set_as_raw(self.order_texture(buf,self.texture.texture_type))
-            self.im.putpalette("BGRX",palette)
+            
+            # self.im.putpalette has been changed since pillow 10.4.0
+            major, minor, patch = pillow_version()
+            if (major < 10) or (major == 10 and minor <= 3):
+                self.im.putpalette("BGRX",palette)
+            else:
+                self.im.putpalette("RGBA","BGRA",palette)
+            
             self.im.putpalettealphas(palette[3::4])
         return -1, 0
     

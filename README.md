@@ -2,6 +2,12 @@
 
 Tools for Chaos;Child PC files.  
 
+Requirement:  
+pillow 9.x or 10.0.x (stable)  
+pillow <=10.3.0 (unsafe)  
+pillow ==10.4.0 (double unsafe)  
+pillow >10.4.0 (unknown)  
+
 dealing with following file format:  
 * mpk.py   for .mpk files  
 ```
@@ -59,4 +65,5 @@ python3 mvl_steam_CHN.py <file>
 * mpk.py update for .mpk files from PSV  
 Some PSV games uses mpk format in a different way, it's supported now.  
 
-Due to the 10.1.0 update of Pillow changed Image.mode related methods, gxt.py may no longer work properly on more recent Pillow versions. If you encounter problems, please roll back to Pillow version 10.0. The correction method currently used comes from [imageio](https://github.com/imageio/imageio/commit/f58379c1ae7fbd1da8689937b39e499e2d225740) with BSD-2 license.
+Due to the 10.1.0 update of Pillow changed Image.mode related methods, gxt.py may no longer work properly on more recent Pillow versions. If you encounter problems, please roll back to Pillow version 10.0. The correction method currently used comes from [imageio](https://github.com/imageio/imageio/commit/f58379c1ae7fbd1da8689937b39e499e2d225740) with BSD-2 license.  
+Pillow changed Image.mode related methods again in 10.4.0. It may still work after edited. If you encounter problems, please roll back to Pillow version 10.0.  
