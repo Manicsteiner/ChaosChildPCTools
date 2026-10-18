@@ -5,8 +5,9 @@ Tools for Chaos;Child PC files.
 Requirement:  
 pillow 9.x or 10.0.x (stable)  
 pillow <=10.3.0 (unsafe)  
-pillow ==10.4.0 (double unsafe)  
-pillow >10.4.0 (unknown)  
+pillow >=10.4.0, <=12.1.1 (double unsafe)  
+
+pillow 12.2.0 and later are no longer supported, and there are no plans to adapt them for now.  
 
 dealing with following file format:  
 * mpk.py   for .mpk files  
@@ -23,7 +24,7 @@ need .png file in the same folder of .mvl file
 ```
 python3 mvl.py <mvlfile>
 ```
-* gxt.py   for .mvl files  
+* gxt.py   for .gxt files  
 convert .gxt file to .png file  
 ```
 python3 gxt.py <gxtfile>
